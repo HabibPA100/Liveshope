@@ -1,0 +1,221 @@
+    /* Header background color animation  */
+    @keyframes rainbow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .animated-rainbow {
+        background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+        background-size: 1400% 1400%;
+        animation: rainbow 8s ease infinite;
+        color: white;
+    }
+
+
+ #zoomResult {
+        background-repeat: no-repeat;
+        pointer-events: none;
+    }
+    /*  card animation  */
+    @keyframes border-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-border-spin {
+        animation: border-spin 8s linear infinite;
+        transition: animation-duration 0.3s ease;
+        border-radius: inherit;
+    }
+
+    /* Hover speed-up effect */
+    .group:hover .animate-border-spin {
+        animation-duration: 2s;
+    }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    /* Outer Glow */
+    .glow-border {
+        box-shadow: 0 0 10px rgba(255, 0, 150, 0.4),
+                    0 0 20px rgba(255, 200, 0, 0.4),
+                    0 0 30px rgba(0, 255, 150, 0.4);
+    }
+
+    h1 {
+      position: relative;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+      padding: 20px 40px;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #1c1c1c;
+      overflow: hidden;
+      z-index: 1;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.04);
+    }
+
+    /* Rainbow animated borders using pseudo-elements */
+    h1::before,
+    h1::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+      );
+      background-size: 300% 100%;
+      animation: rainbowFlow 4s linear infinite;
+      z-index: -1;
+    }
+
+    h1::before {
+      top: 0;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    h1::after {
+      bottom: 0;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    @keyframes rainbowFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+/* Card border animation  */
+
+    /* Rotating border container */
+    .rotating-border {
+        position: relative;
+        padding: 2px;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    /* Rotating animated border */
+    .rotating-border::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+            from 0deg,
+            #ff0000,
+            #00ff00,
+            #0000ff,
+            #ffff00,
+            #ff00ff,
+            #00ffff,
+            #ff0000
+        );
+        animation: rotate 4s linear infinite;
+        z-index: -1;
+    }
+
+    /* Inner content card */
+    .card-inner {
+        background-color: white;
+        border-radius: 8px;
+        position: relative;
+        z-index: 1;
+        padding: 12px;
+    }
+
+    /* Rotating animation */
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* left 0 bottom 0 animation  */
+    /* মূল container এর জন্য */
+    .left-bottom-border {
+        position: relative;
+        padding: 2px;
+    }
+
+    /* Animated border */
+    .left-bottom-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        animation: animated-border 4s linear infinite;
+        pointer-events: none;
+        box-sizing: border-box;
+    }
+
+    /* Keyframe animation */
+    @keyframes animated-border {
+        0% {
+            border-color: red transparent transparent transparent;
+        }
+        25% {
+            border-color: transparent orange transparent transparent;
+        }
+        50% {
+            border-color: transparent transparent yellow transparent;
+        }
+        75% {
+            border-color: transparent transparent transparent green;
+        }
+        100% {
+            border-color: red transparent transparent transparent;
+        }
+    }
+    /* For single card page slider  */
+    #slider-track {
+      transition: transform 0.5s ease-in-out;
+    }
+
+        /* বড় স্ক্রিনে শুধু কালো কালার */
+    @media (min-width: 1024px) {
+        .animated-rainbow {
+            background: #000 !important;
+            animation: none !important;
+        }
+    }
