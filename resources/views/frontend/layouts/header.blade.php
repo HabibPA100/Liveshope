@@ -26,7 +26,6 @@
                 <a href="{{ route('login') }}" class="hover:underline text-sm whitespace-nowrap">Log In</a>
                 <livewire:cart-icon />
             </div>
-
         </div>
     </div>
 </div>

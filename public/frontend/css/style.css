@@ -49,7 +49,7 @@
                     0 0 30px rgba(0, 255, 150, 0.4);
     }
 
-    h1 {
+    .one_design {
       position: relative;
       font-size: 32px;
       font-weight: bold;
@@ -64,13 +64,13 @@
       transition: transform 0.3s ease;
     }
 
-    h1:hover {
+    .one_design:hover {
       transform: scale(1.04);
     }
 
     /* Rainbow animated borders using pseudo-elements */
-    h1::before,
-    h1::after {
+    .one_design::before,
+    .one_design::after {
       content: '';
       position: absolute;
       left: 0;
@@ -92,13 +92,13 @@
       z-index: -1;
     }
 
-    h1::before {
+    .one_design::before {
       top: 0;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
     }
 
-    h1::after {
+    .one_design::after {
       bottom: 0;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;

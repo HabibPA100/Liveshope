@@ -1,7 +1,7 @@
 @extends('frontend.layouts.admin-layouts.admin-master')
 
 @section('content')
-<h1 class="text-2xl font-semibold mb-4">Add Category</h1>
+<h1 class="one_design">Add Category</h1>
 
 <form method="POST" action="{{ route('admin.categories.store') }}" class="space-y-4">
     @csrf

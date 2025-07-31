@@ -24,7 +24,7 @@
     @endif
     
 <div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl">
-    <h1 class="text-sm lg:text-2xl font-bold text-white mb-6">🧮 Commission & Seller Offers</h1>
+    <h1 class="one_design">🧮 Commission & Seller Offers</h1>
 
     <!-- Commission Guidelines -->
     <div class="mb-10">

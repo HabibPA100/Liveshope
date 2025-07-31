@@ -51,12 +51,12 @@ class NewProductCreate extends Component
     {
         return [
             'product_image' => ($this->productId && Product::find($this->productId)?->product_image)
-                ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072'
-                : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072',
+                ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:1024'
+                : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:1024',
 
             'slash_image' => ($this->productId && Product::find($this->productId)?->slash_image)
-                ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072'
-                : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:3072',
+                ? 'nullable|image|mimes:jpg,png,jpeg,gif,webp,avif|max:1024'
+                : 'required|image|mimes:jpg,png,jpeg,gif,webp,avif|max:1024',
 
             'title' => 'required|string|max:255',
             'description' => 'required|string',

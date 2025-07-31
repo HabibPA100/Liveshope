@@ -26,6 +26,13 @@
             </ul>
         </div>
     </div>
+    @if (Request::is('/'))
+        <div class="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
+            <div class="animate-wiggle bg-gray-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                <livewire:cart-icon />
+            </div>
+        </div>
+    @endif
     {{-- Scripts --}}
     @push('scripts')
         <script src="{{ asset('frontend/js/index.js') }}"></script>

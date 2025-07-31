@@ -17,7 +17,7 @@
             @endphp
 
             <a href="{{ route('products.by-category', $path) }}">
-                <h1>অন্যান্য পণ্য সমূহ দেখুন </h1>
+                <h1 class="one_design">অন্যান্য পণ্য সমূহ দেখুন </h1>
             </a>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">

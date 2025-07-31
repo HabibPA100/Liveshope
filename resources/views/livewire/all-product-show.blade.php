@@ -3,7 +3,7 @@
     <section class="bg-gray-100 py-8 px-4">
         <div class="max-w-7xl mx-auto">
             <a href="{{ route('all.product') }}">
-                <h1>সকল পণ্য সমূহ </h1>
+                <h1 class="one_design">সকল পণ্য সমূহ </h1>
             </a>
 
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">

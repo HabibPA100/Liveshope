@@ -2,7 +2,7 @@
 @section('title','Notification Details Page')
 @section('content')
     <div class="max-w-xl mx-auto p-4">
-        <h1 class="text-xl font-semibold mb-4">অর্ডার বিস্তারিত</h1>
+        <h1 class="one_design">অর্ডার বিস্তারিত</h1>
 
         <div class="border p-4 rounded mb-4">
             <h2 class="text-lg font-semibold">প্রোডাক্ট:</h2>
