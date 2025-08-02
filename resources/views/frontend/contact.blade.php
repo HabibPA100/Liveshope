@@ -59,11 +59,11 @@
 
     {{-- লোকেশন ম্যাপ --}}
     <div class="max-w-4xl mx-auto mt-10">
-        <iframe 
+        {{-- <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.5364823877936!2d90.41135557436424!3d23.79867098657645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a353e22445%3A0x9b3b47b4b9c57b68!2sGulshan%201%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1719768158166!5m2!1sen!2sbd" 
             width="100%" height="400" style="border:0;" 
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            class="rounded-lg shadow-md"></iframe>
+            class="rounded-lg shadow-md"></iframe> --}}
     </div>
 </section>
 @endsection

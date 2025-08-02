@@ -52,6 +52,8 @@
             @error('password_confirmation') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
         </div>
 
+    @include('components.password-show')
+
         <!-- দোকানের নাম -->
         <div>
             <label for="store_name" class="block text-sm font-medium text-gray-700">দোকানের নাম</label>

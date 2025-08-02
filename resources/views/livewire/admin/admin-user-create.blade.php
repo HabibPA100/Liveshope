@@ -61,6 +61,8 @@
                 </div>
             @endunless
 
+            @include('components.single-password-show')
+            
             <div class="flex items-center justify-between space-x-4 mt-6">
                 <button type="submit"
                         class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded transition-all duration-200">

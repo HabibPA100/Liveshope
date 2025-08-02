@@ -77,6 +77,8 @@
                        class="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition shadow-sm hover:shadow-md" />
             </div>
 
+            @include('components.password-show')
+            
             <!-- প্রোফাইল ছবি -->
             <div>
                 <label for="profile_image" class="block text-gray-700 font-medium mb-1">প্রোফাইল ছবি দিন</label>
