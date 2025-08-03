@@ -2,6 +2,7 @@
 
 @section('head')
     {{-- SEO / Social Meta --}}
+    <meta property="fb:app_id" content="1393068288423146" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:title" content="{{ $card->title }}" />
