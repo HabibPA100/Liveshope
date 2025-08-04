@@ -3,7 +3,7 @@
     <section class="bg-gray-100 py-3 px-4">
         <div class="max-w-7xl mx-auto">
             <a href="{{ route('products.featured-gifts') }}">
-                <h1 class="one_design">প্রিয় গিফট প্যাকস</h1>
+                <p class="one_design">প্রিয় গিফট প্যাকস</p>
             </a>
             <div class="flex flex-wrap -mx-2">
                 @foreach($gifts as $gift)

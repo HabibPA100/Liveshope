@@ -9,7 +9,7 @@
 <!-- Social Media Meta Tags (Open Graph for Facebook, LinkedIn, etc.) -->
 <meta property="og:title" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম">
 <meta property="og:description" content="নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি। এখনই শপ করুন Live Shope-এ।">
-<meta property="og:image" content="{{ asset('frontend/favicon/favicon.svg') }}">
+<meta property="og:image" content="{{ asset('frontend/favicon/favicon-96x96.png') }}">
 <meta property="og:url" content="https://liveshope.xyz/">
 <meta property="og:type" content="website">
 
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম">
 <meta name="twitter:description" content="নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি। এখনই শপ করুন Live Shope-এ।">
-<meta name="twitter:image" content="{{ asset('frontend/favicon/favicon.svg') }}">
+<meta name="twitter:image" content="{{ asset('frontend/favicon/favicon-96x96.png') }}">
 
 <!-- Title -->
 <title>@yield('title', 'Live Shope')</title>

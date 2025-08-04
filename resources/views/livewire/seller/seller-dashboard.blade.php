@@ -20,7 +20,6 @@
             </button>
         </nav>
     </aside>
-
     <!-- Overlay for mobile -->
     <div x-show="sidebarOpen" @click="sidebarOpen = false"
         class="fixed inset-0 bg-black opacity-30 z-30 lg:hidden"></div>
@@ -28,7 +27,7 @@
     <!-- Main Content -->
     <main class="flex-1 p-4 lg:p-6 overflow-x-hidden">
         <div class="mb-6">
-            <h1 class="one_design">Welcome, Seller!</h1>
+            <p class="one_design">Welcome, Seller!</p>
             <p class="text-gray-500">Here is your dashboard overview.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -16,7 +16,7 @@
                 $path = implode('/', $slugs);
             @endphp
             <a href="{{ route('products.by-category', $path) }}">
-                <h1 class="one_design"> পাঞ্জাবী সমূহ দেখুন </h1>
+                <p class="one_design"> পাঞ্জাবী সমূহ দেখুন </p>
             </a>
             <div class="flex flex-wrap -mx-2">
                 @foreach($panjabis as $panjabi)

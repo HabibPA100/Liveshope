@@ -5,7 +5,7 @@
 @section('content')
 <section class="bg-white py-16 px-6">
     <div class="max-w-4xl mx-auto text-center">
-        <h1 class="one_design">যোগাযোগ করুন</h1>
+        <p class="one_design">যোগাযোগ করুন</p>
         <p class="text-gray-600 mb-10 text-lg">
             আপনার যেকোনো প্রশ্ন, পরামর্শ বা সেবা সংক্রান্ত সহায়তার জন্য আমাদের সাথে যোগাযোগ করুন। আমরা দ্রুত সময়ের মধ্যে আপনার বার্তার উত্তর দেওয়ার চেষ্টা করব।
         </p>

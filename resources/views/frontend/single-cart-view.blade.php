@@ -52,8 +52,8 @@
         <div class="md:col-span-4 space-y-4">
             <h2 class="text-2xl font-bold text-gray-900">{{ $card->title }}</h2>
 
-            <div class="text-gray-700">
-                {!! $card->description !!}
+            <div class="text-gray-700 whitespace-pre-line">
+                {{ $card->description }}
             </div>
 
             <div class="flex items-center gap-2 text-sm mt-2">
