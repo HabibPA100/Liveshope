@@ -92,7 +92,7 @@
                 <input type="checkbox" id="terms" name="terms" wire:model="terms"
                        class="text-pink-500 focus:ring-pink-400 rounded border-gray-300" />
                 <label for="terms" class="text-sm text-gray-600">
-                    আমি <a href="#" class="text-pink-600 hover:underline">শর্তাবলীতে</a> সম্মত
+                    আমি <a href="{{ route('terms.condition') }}" class="text-pink-600 hover:underline">শর্তাবলীতে</a> সম্মত
                 </label>
             </div>
             @error('terms') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror

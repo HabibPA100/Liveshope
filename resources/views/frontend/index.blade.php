@@ -3,7 +3,10 @@
 @section('title', 'Live Shope')
 
 @section('content')
-
+    <!-- Loader - wire:loading এ থাকবে -->
+    <div wire:loading class="fixed inset-0 flex items-center justify-center bg-white z-50">
+        <img src="{{ asset('frontend/images/loader.gif') }}" alt="লোড হচ্ছে..." class="w-16 h-16">
+    </div>
     {{-- Slider --}}
     @include('frontend.layouts.components.slider')
 

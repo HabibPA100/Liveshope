@@ -8,7 +8,7 @@
 
             <!-- Header -->
             <div class="text-center mb-12">
-                <p class="one_design">শর্তাবলি ও নীতিমালা</p>
+                <h1 class="one_design">শর্তাবলি ও নীতিমালা</h1>
                 <p class="text-lg text-gray-600">আমাদের প্ল্যাটফর্ম ব্যবহারের পূর্বে দয়া করে নিম্নোক্ত শর্তাবলি ও নীতিমালা ভালোভাবে পড়ে নিন।</p>
             </div>
 

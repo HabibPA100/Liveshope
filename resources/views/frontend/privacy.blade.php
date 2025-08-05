@@ -8,7 +8,7 @@
 
             <!-- Header -->
             <div class="text-center mb-12">
-                <p class="one_design">গোপনীয়তা নীতিমালা</p>
+                <h1 class="one_design">গোপনীয়তা নীতিমালা</h1>
                 <p class="text-lg text-gray-600">Live Shope আপনার ব্যক্তিগত তথ্যের নিরাপত্তা নিশ্চিত করতে দৃঢ়প্রতিজ্ঞ। নিচে আমাদের ৯টি গোপনীয়তা নীতিমালা তুলে ধরা হলো।</p>
             </div>
 

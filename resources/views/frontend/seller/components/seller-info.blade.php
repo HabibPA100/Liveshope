@@ -14,7 +14,7 @@
             <a href="{{ route('create.product') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">📦 My Products</a>
             <a href="{{ route('show.order.list') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🛒 Orders</a>
             <a href="{{ route('commission') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">💬 Commissions</a>
-            <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⚙️ Settings</a>
+            {{-- <a href="#" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">⚙️ Settings</a> --}}
             <button wire:click="logout" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition w-full">
                 Logout
             </button>

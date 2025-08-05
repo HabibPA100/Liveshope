@@ -1,6 +1,6 @@
 <section class="bg-gray-100 py-6 px-4">
     <div class="max-w-7xl mx-auto">
-        <p class="one_design">Shoes shop</p>
+        <h1 class="one_design">Shoes shop</h1>
         <div class="flex flex-wrap -mx-2">
             @foreach($shoes as $shoe)
                 <div class="w-full sm:w-1/2 lg:w-1/5 px-2 mb-6" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
