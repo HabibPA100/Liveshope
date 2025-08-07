@@ -43,7 +43,7 @@
                     x-transition
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50"
                 >
-                    <a href="#"
+                    <a href="{{ route('buyer.profile.edit') }}"
                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
                     <a href="#"
                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>

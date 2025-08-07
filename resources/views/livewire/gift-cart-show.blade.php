@@ -7,7 +7,7 @@
             </a>
             <div class="flex flex-wrap -mx-2">
                 @foreach($gifts as $gift)
-                    <div class="w-full sm:w-1/2 lg:w-1/5 px-2 mb-6" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                    <div class="w-1/2 lg:w-1/5 px-2 mb-6">
                         <div class="rotating-border">
                             <div class="card-inner transition-all duration-300 transform">
                                 <img src="{{ asset('storage/' . $gift->product_image) }}" class="w-full h-40 object-cover rounded hover:-translate-y-2 hover:scale-105 hover:opacity-90 transition duration-300" alt="{{ $gift->title }}">

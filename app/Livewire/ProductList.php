@@ -10,8 +10,16 @@ class ProductList extends Component
 {
     public function render()
     {
+        if (Auth::user()->role === 'admin') {
+            // যদি অ্যাডমিন হয়, সব প্রোডাক্ট দেখাবে
+            $products = Product::latest()->get();
+        } else {
+            // seller বা অন্য কেউ হলে নিজের প্রোডাক্ট দেখাবে
+            $products = Product::where('seller_id', Auth::id())->latest()->get();
+        }
+
         return view('livewire.product-list', [
-            'products' => Product::where('seller_id', Auth::id())->latest()->get(),
+            'products' => $products,
         ]);
     }
 

@@ -1,5 +1,5 @@
 <div class="container mx-auto px-4 py-6 overflow-x-hidden">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6" data-aos="fade-down">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6" >
         🛒 আপনার কার্ট
     </h2>
 
@@ -7,7 +7,7 @@
         <!-- 🛍️ কার্ট আইটেম লিস্ট -->
         <div class="col-span-1 md:col-span-3 lg:col-span-4 space-y-4">
             @forelse ($cart as $item)
-                <div class="flex gap-4 border rounded-lg shadow-md p-4 bg-white" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex gap-4 border rounded-lg shadow-md p-4 bg-white">
                     <div class="w-full md:w-32">
                         <img 
                             src="{{ asset('storage/' . $item['product_image']) }}" 
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             @empty
-                <div class="text-center text-gray-500 text-lg" data-aos="zoom-in">
+                <div class="text-center text-gray-500 text-lg">
                     😕 আপনার কার্ট খালি!
                 </div>
             @endforelse
@@ -55,7 +55,7 @@
 
         <!-- 📦 অর্ডার সামারি -->
         @if($cart)
-        <div class="col-span-1 md:col-span-2 lg:col-span-3 space-y-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 space-y-6">
             <p class="one_design">অর্ডার করুন - ক্যাশ অন ডেলিভারিতে</p>
 
             <form wire:submit.prevent="placeOrder" class="space-y-6">

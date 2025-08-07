@@ -18,7 +18,11 @@ Route::get('/create-admin-account', [AdminDashboardController::class,'create'])-
 Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/show-message', [AdminDashboardController::class, 'message'])->name('all.message');
+
+    Route::resource('products', \App\Http\Controllers\Admin\ProductManageController::class)->names('admin.products');
+
     Route::get('/notification/details/{id}', [AdminNotificationController::class, 'show'])
+
                 ->name('admin.notification.details');
 
     Route::get('/notification/{id}/pdf', [AdminNotificationController::class, 'downloadNotificationPdf'])

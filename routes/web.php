@@ -3,9 +3,11 @@
 use App\Livewire\CartPage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Buyer\BuyerProfileEdit;
 use App\Http\Controllers\TermsController;
 use App\Livewire\Buyer\BuyerRegistration;
 use App\Http\Controllers\LogOutController;
+use App\Livewire\Seller\SellerProfileEdit;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GetCartController;
@@ -15,6 +17,7 @@ use App\Livewire\Seller\SellerRegistration;
 use App\Http\Controllers\AllClothController;
 use App\Http\Controllers\CartViewController;
 use App\Http\Controllers\CommissionController;
+use App\Http\Controllers\Seller\SellerDashboard;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\AllProductShowController;
 use App\Http\Controllers\Auth\UserLoginController;
@@ -51,6 +54,8 @@ Route::middleware('auth:buyer')->prefix('buyer')->group(function () {
     
     Route::get('/dashboard', [BuyerDashboardController::class, 'dashboard'])->name('buyer.dashboard');
 
+    Route::get('/buyer/profile/edit', BuyerProfileEdit::class)->name('buyer.profile.edit');
+
     Route::get('/notifications/{id}', [BuyerNotificationController::class, 'show'])
     ->name('buyer.notification.details');
 });
@@ -58,6 +63,9 @@ Route::middleware('auth:buyer')->prefix('buyer')->group(function () {
 Route::middleware('auth:seller')->prefix('seller')->group(function () {
 
     Route::get('/dashboard', [SellerDashboardController::class, 'dashboard'])->name('seller.dashboard');
+
+    Route::get('/profile/edit', [SellerDashboard::class, 'editProfile'])->name('seller.profile.edit');
+
     Route::get('/commission', [ CommissionController::class, 'commission'])->name('commission');
     
     Route::post('/subscription', [SubscriptionController::class, 'store'])->name('subscription.store');

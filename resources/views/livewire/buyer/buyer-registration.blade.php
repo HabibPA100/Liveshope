@@ -11,7 +11,7 @@
 
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">আমি পণ্য কিনতে চাই ?</h2>
 
-        <form wire:submit.prevent="register" class="space-y-5" data-aos="zoom-in" data-aos-delay="200">
+        <form wire:submit.prevent="register" class="space-y-5">
             <!-- সম্পূর্ণ নাম -->
             <div>
                 <label for="name" class="block text-gray-700 font-medium mb-1">সম্পূর্ণ নামঃ</label>

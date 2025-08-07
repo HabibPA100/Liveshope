@@ -10,7 +10,7 @@
         class="fixed lg:relative z-40 w-64 bg-white shadow-md h-full p-4 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:block">
         <h2 class="text-2xl font-bold text-blue-600 mb-6">Admin Panel</h2>
         <nav class="space-y-3">
-            <a href="{{ route('admin.dashboard') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🏠 Dashboard</a>
+            <a href="{{ route('admin.products.index') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🎍 Products</a>
             <a href="{{ route('all.buyer.show') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium"><i class="fa-solid fa-users"></i> <span>All Buyer</span></a>
             <a href="{{ route('all.seller.show') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium"><i class="fa-solid fa-scale-balanced"></i> <span>All Seller</span></a>
             <a href="{{ route('buyer.order.list') }}" class="block px-3 py-2 rounded hover:bg-blue-100 text-gray-700 font-medium">🛒 Orders</a>
