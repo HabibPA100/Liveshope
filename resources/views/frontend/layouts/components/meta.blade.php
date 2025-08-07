@@ -1,26 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!-- Title -->
+<title>@yield('title', 'Live Shope')</title>
 <!-- SEO Meta Tags -->
 <meta name="description" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম। নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি।">
 <meta name="keywords" content="Live Shope, Online Shopping, Discount, Fast Delivery, বাংলাদেশ, ই-কমার্স">
 <meta name="author" content="Live Shope">
 
-<!-- Social Media Meta Tags (Open Graph for Facebook, LinkedIn, etc.) -->
-{{-- <meta property="og:title" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম">
-<meta property="og:description" content="নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি। এখনই শপ করুন Live Shope-এ।">
-<meta property="og:image" content="{{ asset('frontend/images/social-share.png') }}">
-<meta property="og:url" content="https://liveshope.xyz/">
-<meta property="og:type" content="website"> --}}
-
-<!-- Twitter Card Meta Tags -->
-{{-- <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম">
-<meta name="twitter:description" content="নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি। এখনই শপ করুন Live Shope-এ।">
-<meta name="twitter:image" content="{{ asset('frontend/images/social-share.png') }}"> --}}
-
-<!-- Title -->
-<title>@yield('title', 'Live Shope')</title>
 @include('frontend.layouts.components.my-links')
 <!-- Styles / Scripts -->
 @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))

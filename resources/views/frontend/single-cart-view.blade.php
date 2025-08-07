@@ -90,6 +90,11 @@
                     <a href="https://wa.me/?text={{ urlencode(url()->current()) }}" target="_blank" class="text-green-500 hover:text-green-700"><i class="fab fa-whatsapp"></i></a>
                     <a href="fb-messenger://share?link={{ urlencode(url()->current()) }}" target="_blank" class="text-blue-500 hover:text-blue-700"><i class="fab fa-facebook-messenger"></i></a>
                     <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}" target="_blank" class="text-gray-700 hover:text-black"><i class="fab fa-x-twitter"></i></a>
+                    
+                    <!-- Copy URL Button -->
+                    <button onclick="copyUrl()" class="text-gray-600 hover:text-gray-900 flex items-center gap-1">
+                        <i class="fas fa-copy"></i> <span class="text-base">কপি করুন</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -111,6 +116,21 @@
         </div>
     </div>
 </div>
+
+<!-- ✅ JavaScript: Copy URL Function -->
+<script>
+    function copyUrl() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                alert("লিংক কপি হয়েছে!");
+            })
+            .catch(err => {
+                alert("দুঃখিত, কপি করা যায়নি!");
+                console.error(err);
+            });
+    }
+</script>
 
 {{-- Optional Slider --}}
 @include('frontend.layouts.components.right-slider')
