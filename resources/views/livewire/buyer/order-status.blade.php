@@ -1,6 +1,5 @@
 <div>
     @if ($orders->isNotEmpty())
-        
         @foreach ($orders as $order)
             @php
                 $deliveryDate = $order->created_at->copy()->addDays(3);
@@ -8,8 +7,9 @@
                 $hideTimeline = $order->status === 'delivered' && $deliveryDate->isPast();
             @endphp
 
-            @if($hideTimeline)
-                @continue  {{-- এই অর্ডার স্কিপ করে পরেরটায় যাও --}}
+            {{-- যদি অর্ডার 'cancelled' হয় বা টাইমলাইন হাইড করতে হয় তাহলে স্কিপ করব --}}
+            @if ($order->status === 'cancelled' || $hideTimeline)
+                @continue
             @endif
 
             <div class="border p-4 rounded mb-6">

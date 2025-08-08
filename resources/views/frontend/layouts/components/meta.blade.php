@@ -6,7 +6,7 @@
 <meta name="description" content="Live Shope - আপনার প্রিয় অনলাইন শপিং প্ল্যাটফর্ম। নতুন প্রোডাক্ট, আকর্ষণীয় ডিসকাউন্ট ও দ্রুত ডেলিভারি।">
 <meta name="keywords" content="Live Shope, Online Shopping, Discount, Fast Delivery, বাংলাদেশ, ই-কমার্স">
 <meta name="author" content="Live Shope">
-
+@yield('head')
 @include('frontend.layouts.components.my-links')
 <!-- Styles / Scripts -->
 @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
