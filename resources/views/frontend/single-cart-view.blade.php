@@ -6,7 +6,9 @@
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:title" content="{{ $card->title }}" />
     <meta property="og:description" content="{{ Str::limit(strip_tags($card->description), 50) }}" />
-    <meta property="og:image" content="{{ url(asset('storage/' . $card->slash_image)) }}" />
+    <meta property="og:image" content="{{ asset('storage/' . $card->slash_image) }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $card->title }}" />

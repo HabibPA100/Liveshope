@@ -12,7 +12,8 @@ class BuyerRegistration extends Component
 {
     use WithFileUploads;
 
-    public $name, $email, $password, $password_confirmation, $phone, $address, $profile_image, $terms;
+    public $name, $email, $password, $password_confirmation, $phone, $address, $profile_image;
+    public $terms = true;
 
     protected $rules = [
         'name' => 'required|string|max:255',
