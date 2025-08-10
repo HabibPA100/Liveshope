@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        @include('frontend.layouts.components.meta')
+<head>
+    @include('frontend.layouts.components.meta')
     @stack('style')
     @livewireStyles
 </head>
