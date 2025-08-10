@@ -10,7 +10,7 @@ class ProductList extends Component
 {
     public function render()
     {
-        if (Auth::user()->role === 'admin') {
+        if (Auth::guard('admin')->check()) {
             // যদি অ্যাডমিন হয়, সব প্রোডাক্ট দেখাবে
             $products = Product::latest()->get();
         } else {
