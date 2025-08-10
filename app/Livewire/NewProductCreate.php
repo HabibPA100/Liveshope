@@ -170,20 +170,35 @@ class NewProductCreate extends Component
 
     public function edit($id)
     {
-        $product = Product::where('id', $id)
-            ->where('seller_id', Auth::id())
-            ->firstOrFail();
+        if (auth('admin')->check()) {
+            $product = Product::findOrFail($id);
+        } elseif (auth('seller')->check()) {
+            $product = Product::where('id', $id)
+                ->where('seller_id', auth('seller')->id())
+                ->firstOrFail();
+        } else {
+            abort(403, 'Unauthorized');
+        }
 
         $this->fill($product->toArray());
         $this->productId = $product->id;
 
-        // category_path কে অ্যাসাইন করতে চাইলে:
         $this->category_path = $product->category_path ?? [];
         $this->category_id = $product->category_id ?? null;
     }
 
-    public function delete(Product $product)
+    public function delete($id)
     {
+        if (auth('admin')->check()) {
+            $product = Product::findOrFail($id);
+        } elseif (auth('seller')->check()) {
+            $product = Product::where('id', $id)
+                ->where('seller_id', auth('seller')->id())
+                ->firstOrFail();
+        } else {
+            abort(403, 'Unauthorized');
+        }
+
         $product->delete();
         session()->flash('message', 'Product deleted successfully!');
     }

@@ -30,7 +30,18 @@ class ProductList extends Component
 
     public function delete($id)
     {
-        Product::findOrFail($id)->delete();
+        if (auth('admin')->check()) {
+            $product = Product::findOrFail($id);
+        } elseif (auth('seller')->check()) {
+            $product = Product::where('id', $id)
+                ->where('seller_id', auth('seller')->id())
+                ->firstOrFail();
+        } else {
+            abort(403, 'Unauthorized');
+        }
+
+        $product->delete();
         session()->flash('message', 'Product deleted successfully!');
     }
+
 }
