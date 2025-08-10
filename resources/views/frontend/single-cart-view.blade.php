@@ -8,7 +8,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:title" content="{{ $card->title }}" />
-    <meta property="og:description" content="{{ Str::limit(strip_tags($card->description), 50) }}" />
+    <meta property="og:description" content="{{ Str::limit(strip_tags($card->description), 100) }}" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $card->title }}" />
