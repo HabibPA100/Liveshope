@@ -8,56 +8,46 @@
             <div class="flex flex-wrap -mx-2">
                 @foreach($gifts as $gift)
                     <div class="w-1/2 lg:w-1/5 px-2 mb-6">
-                        <div class="h-full flex flex-col justify-between border rounded-lg shadow bg-white overflow-hidden">
-                            {{-- Image --}}
-                            <img src="{{ asset('storage/' . $gift->product_image) }}" 
-                                 class="w-full h-40 object-cover" 
-                                 alt="{{ $gift->title }}">
+                        <div class="rotating-border">
+                            <div class="card-inner transition-all duration-300 transform">
+                                <img src="{{ asset('storage/' . $gift->product_image) }}" class="w-full h-40 object-cover rounded hover:-translate-y-2 hover:scale-105 hover:opacity-90 transition duration-300" alt="{{ $gift->title }}">
+                                @php
+                                    $title = $gift->title;
+                                    $length = Str::length($title);
+                                    if ($length > 15) {
+                                        $displayTitle = Str::substr($title, 0, 15); // কেটে 15 অক্ষর নেওয়া
+                                    } elseif ($length < 15) {
+                                        $displayTitle = $title . str_repeat('.', 15 - $length); // যতটুকু ঘাটতি, ততগুলো . যোগ
+                                    } else {
+                                        $displayTitle = $title; // ঠিক 15 হলে, যেভাবে আছে সেভাবেই
+                                    }
+                                @endphp
 
-                            {{-- Title --}}
-                            @php
-                                $title = $gift->title;
-                                $length = Str::length($title);
-                                if ($length > 25) {
-                                    $displayTitle = Str::substr($title, 0, 25);
-                                } elseif ($length < 25) {
-                                    $displayTitle = $title . str_repeat('.', 25 - $length);
-                                } else {
-                                    $displayTitle = $title;
-                                }
-                            @endphp
-                            <div class="p-3 flex flex-col flex-grow justify-between">
-                                <h3 class="font-bold text-md text-gray-800 hover:text-blue-600 transition min-h-[3rem]">
+                                <h3 class="font-bold text-lg mt-3 text-gray-800 hover:text-blue-600 transition">
                                     {{ $displayTitle }}
                                 </h3>
-
-                                {{-- Stock --}}
-                                <p class="{{ $gift->status == 'in stock' ? 'text-green-700' : 'text-red-700' }}">
-                                    {{ $gift->status == 'in stock' ? '✅' : '❌' }}{{ $gift->status }}
-                                </p>
-
-                                {{-- Price --}}
-                                <div class="text-xl font-bold text-blue-600 mt-1">
-                                    <p class="text-green-700">
-                                        ৳{{ number_format($gift->offer_price, 2) }} 
-                                        <span class="text-gray-500">
-                                            <del>৳{{ number_format($gift->real_price, 2) }}</del>
+                                @if($gift->status == 'in stock')
+                                    <p class="text-green-700">✅{{ $gift->status }}</p>
+                                @else
+                                    <p class="text-red-700">❌{{ $gift->status }}</p>
+                                @endif
+                                <div class="text-xl font-bold text-blue-600">
+                                    <p class="text-green-700"> ৳{{ number_format($gift->offer_price, 2) }} 
+                                        <span class="text-gray-500"> 
+                                            <del> ৳{{ number_format($gift->real_price, 2) }} </del>
                                         </span>
-                                    </p>
+                                    </p> 
                                 </div>
 
-                                {{-- Buttons --}}
-                                <div class="flex justify-between items-center mt-4">
-                                    <a href="{{ route('cart.details', $gift->id) }}" 
-                                       class="text-sm bg-gray-100 text-gray-800 px-3 py-2 rounded hover:bg-gray-300 transition">
-                                       View
-                                    </a>
+                                <div class="flex justify-between items-center pt-4">
+
+                                    <a href="{{ route('cart.details', $gift->id) }}" class="text-sm bg-gray-100 text-gray-800 px-3 p-2 rounded hover:bg-gray-300 transition">View</a>
 
                                     <livewire:add-to-cart 
-                                        :productId="$gift->id" 
-                                        :key="$gift->id" 
-                                        buttonClass="text-sm bg-red-400 text-white px-3 py-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
-                                    />
+                                            :productId="$gift->id" 
+                                            :key="$gift->id" 
+                                            buttonClass="text-sm bg-red-400 text-white p-2 rounded hover:bg-purple-600 transition shadow hover:shadow-lg"
+                                        />
                                 </div>
                             </div>
                         </div>

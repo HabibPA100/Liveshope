@@ -97,10 +97,6 @@
                         </button>
                     </div>
                     
-                    <!-- Copy URL Button -->
-                    {{-- <button onclick="copyUrl()" class="text-gray-600 hover:text-gray-900 flex items-center gap-1">
-                        <i class="fas fa-copy"></i> <span class="text-base">কপি করুন</span>
-                    </button> --}}
                 </div>
             </div>
         </div>
@@ -125,12 +121,12 @@
 
 <!-- ✅ JavaScript: Copy URL Function -->
 <script>
-    function shareContent() {
+        function shareContent() {
         if (navigator.share) {
             navigator.share({
-                title: "{{ $card->title }}",
-                text: "{{ Str::limit(strip_tags($card->description), 100) }}",
-                url: "{{ url()->current() }}"
+                title: @json($card->title),
+                text: @json(Str::limit(strip_tags($card->description), 100)),
+                url: @json(url()->current())
             })
             .then(() => console.log('✅ Shared successfully'))
             .catch(error => console.error('❌ Share failed:', error));
@@ -138,18 +134,6 @@
             alert("দুঃখিত, আপনার ব্রাউজার এই ফিচার সাপোর্ট করে না।");
         }
     }
-
-    // function copyUrl() {
-    //     const url = window.location.href;
-    //     navigator.clipboard.writeText(url)
-    //         .then(() => {
-    //             alert("লিংক কপি হয়েছে!");
-    //         })
-    //         .catch(err => {
-    //             alert("দুঃখিত, কপি করা যায়নি!");
-    //             console.error(err);
-    //         });
-    // }
 </script>
 
 {{-- Optional Slider --}}
