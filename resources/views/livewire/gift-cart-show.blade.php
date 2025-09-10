@@ -31,7 +31,7 @@
                                 @else
                                     <p class="text-red-700">❌{{ $gift->status }}</p>
                                 @endif
-                                <div class="text-xl font-bold text-blue-600">
+                                <div class="text-lg font-bold text-blue-600">
                                     <p class="text-green-700"> ৳{{ number_format($gift->offer_price, 2) }} 
                                         <span class="text-gray-500"> 
                                             <del> ৳{{ number_format($gift->real_price, 2) }} </del>

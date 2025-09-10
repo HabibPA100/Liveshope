@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('head')
+@push('meta')
     {{-- SEO / Social Meta --}}
     <meta property="og:image" content="{{ asset('storage/' . $card->slash_image) }}" />
     <meta property="og:image:width" content="1200" />
@@ -8,14 +8,13 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:title" content="{{ $card->title }}" />
-    <meta property="og:description" content="{{ Str::limit(strip_tags($card->description), 100) }}" />
+    <meta property="og:description" content="{{ Str::limit(strip_tags($card->description), 150) }}" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ $card->title }}" />
-    <meta name="twitter:description" content="{{ Str::limit(strip_tags($card->description), 50) }}" />
-    <meta name="twitter:image" content="{{ url(asset('storage/' . $card->slash_image)) }}" />
-
-@endsection
+    <meta name="twitter:description" content="{{ Str::limit(strip_tags($card->description), 150) }}" />
+    <meta name="twitter:image" content="{{ asset('storage/' . $card->slash_image) }}" />
+@endpush
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 py-8">
@@ -67,7 +66,7 @@
                 @endif
             </div>
             <div class="flex items-center gap-2 text-sm mt-2">
-                <p class="font-bold text-black">স্টক পরিমাণ = <span class="text-red-700">{{ $card->stock_quantity }}</span></p>
+                <p class="font-bold text-black">স্টক পরিমাণ = <span class="text-green-700">{{ $card->stock_quantity }}</span></p>
             </div>
 
             <!-- 💰 Price Section -->
@@ -90,13 +89,29 @@
             <!-- 🔗 Social Share -->
             <div class="mt-6">
                 <div class="flex gap-4 text-xl">
-                    <!-- 🔗 Social Share Button -->
-                    <div class="mt-6">
-                        <button onclick="shareContent()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-                            <i class="fa-solid fa-square-share-nodes"></i> শেয়ার করুন
-                        </button>
-                    </div>
-                    
+                   <!-- Facebook -->
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a class="whatsapp" href="https://wa.me/?text={{ urlencode(url()->current()) }}"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+
+                    <!-- Messenger -->
+                    <a class="messenger" href="fb-messenger://share?link={{ urlencode(url()->current()) }}"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a class="twitter" href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -118,23 +133,6 @@
         </div>
     </div>
 </div>
-
-<!-- ✅ JavaScript: Copy URL Function -->
-<script>
-        function shareContent() {
-        if (navigator.share) {
-            navigator.share({
-                title: @json($card->title),
-                text: @json(Str::limit(strip_tags($card->description), 100)),
-                url: @json(url()->current())
-            })
-            .then(() => console.log('✅ Shared successfully'))
-            .catch(error => console.error('❌ Share failed:', error));
-        } else {
-            alert("দুঃখিত, আপনার ব্রাউজার এই ফিচার সাপোর্ট করে না।");
-        }
-    }
-</script>
 
 {{-- Optional Slider --}}
 @include('frontend.layouts.components.right-slider')
